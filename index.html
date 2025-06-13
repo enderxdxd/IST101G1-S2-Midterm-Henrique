@@ -28,6 +28,23 @@
 </head>
 
 <body>
+  <p><strong>My EC2 Instance Public IP:</strong></p>
+<div id="ec2-ip">Loading...</div>
+
+<p><strong>Your Name:</strong> Henrique Parreira Costa</p>
+<p><strong>Date:</strong> June 12, 2025</p>
+
+<script>
+  // fetch public IP
+  fetch('https://api.ipify.org?format=json')
+    .then(r=>r.json())
+    .then(data=>{
+      document.getElementById('ec2-ip').textContent = data.ip;
+    })
+    .catch(_=>{
+      document.getElementById('ec2-ip').textContent = 'Unable to load IP.';
+    });
+</script>
   <h1 id="title">MidTerm Exam - DevOps Infrastructure Level 1</h1>
 
   <div class="container">
